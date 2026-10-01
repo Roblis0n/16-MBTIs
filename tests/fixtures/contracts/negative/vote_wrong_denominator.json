@@ -1,0 +1,33 @@
+{
+  "run_id": "run-synthetic-001",
+  "proposal_id": "P1",
+  "proposal_version": "v1",
+  "synthetic": true,
+  "policy": "absolute_majority",
+  "quorum": 2,
+  "eligible_ids": [
+    "intj",
+    "intp",
+    "entj",
+    "entp"
+  ],
+  "counts": {
+    "eligible": 4,
+    "responded": 4,
+    "valid_ballots": 4,
+    "yes": 1,
+    "no": 0,
+    "abstain": 3,
+    "decisive": 1
+  },
+  "missing_ids": [],
+  "invalid_ids": [],
+  "failed_ids": [],
+  "yes_over_eligible": 1.0,
+  "verdict": "no_quorum",
+  "provisional_verdict": null,
+  "calculation_version": "1.0.0",
+  "limitations": [
+    "仅合成算法例，不是真实人群支持率"
+  ]
+}

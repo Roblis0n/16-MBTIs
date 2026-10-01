@@ -1,0 +1,33 @@
+{
+  "run_id": "run-synthetic-001",
+  "decision_id": "D1",
+  "decision_version": "v1",
+  "status": "no_feasible_option",
+  "candidate_ids": [
+    "A",
+    "B"
+  ],
+  "selected": "A",
+  "user_goal": "合成例：预算不超过100单位",
+  "hard_constraints": [
+    "cost <= 100 units"
+  ],
+  "strongest_case": "不适用，均不可行",
+  "weakest_case": "A/B均违反硬预算",
+  "risk": [
+    "修改预算需要用户重新确认"
+  ],
+  "revisit_when": [],
+  "missing_information": [],
+  "violations": [
+    {
+      "candidate_id": "A",
+      "constraint": "cost > 100 units"
+    },
+    {
+      "candidate_id": "B",
+      "constraint": "cost > 100 units"
+    }
+  ],
+  "evidence_ids": []
+}

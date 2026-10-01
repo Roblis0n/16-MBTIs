@@ -1,0 +1,85 @@
+{
+  "source": "readonly-plan/08_baseline/original_source/Outputs/qiita-title-discussion.md",
+  "source_sha256": "c4b5436ef10940be701251cb04bce06033ead0699dc88b9da294cf8e8d4d55e7",
+  "actual_rows": [
+    [
+      "intj",
+      4
+    ],
+    [
+      "intp",
+      3
+    ],
+    [
+      "entj",
+      4
+    ],
+    [
+      "entp",
+      4
+    ],
+    [
+      "infj",
+      4
+    ],
+    [
+      "infp",
+      3
+    ],
+    [
+      "enfj",
+      4
+    ],
+    [
+      "enfp",
+      4
+    ],
+    [
+      "istj",
+      4
+    ],
+    [
+      "isfj",
+      3
+    ],
+    [
+      "estj",
+      4
+    ],
+    [
+      "esfj",
+      4
+    ],
+    [
+      "istp",
+      4
+    ],
+    [
+      "isfp",
+      3
+    ],
+    [
+      "estp",
+      5
+    ],
+    [
+      "esfp",
+      4
+    ]
+  ],
+  "min": 3,
+  "modes": [
+    4
+  ],
+  "max": 5,
+  "median": 4.0,
+  "counts": {
+    "1": 0,
+    "2": 0,
+    "3": 4,
+    "4": 11,
+    "5": 1
+  },
+  "finding": "Historical prose duplicates ESTP in score4 andscore5; actual ESTProw is5. Rows evaluate different proposed titles; histogram is only source-data description, not shared-object group approval.",
+  "observed_at": "2026-09-30T11:24:58.399451+00:00"
+}

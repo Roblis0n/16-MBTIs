@@ -1,0 +1,2 @@
+# Answer separation
+Public development-gold.json contains developer-authored explicit synthetic answers and semantic invariants for the12 public tasks. Eight arithmetic/state/feature-table checks are executable in evaluation.check_development; prose requires semantic review. No hidden holdout answers are shipped or were read. Public gold is not sealed and cannot support independent holdout claims.

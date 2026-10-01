@@ -1,0 +1,9 @@
+# Optional multi-model protocol
+
+WP32 was selected for isolated engineering. Paid/external model use was not authorized; budget is zero. No SDK, key lookup, account probing, network call, installation, background service or production routing is implemented. Current productization decision: no_go because baseline, independent benefit evidence and execution permissions are absent.
+
+Before a future experiment, obtain a separately approved change request recording target task, expected complementary errors, exact provider/model/interface, fields and classifications transmitted, per-provider field-level permission, maximum cost/currency, stop conditions and privacy limitations. A provider authorized to receive private code does not authorize another provider. Compare identical materials and observable budgets for within-model sampling and cross-model combinations; do not add workflow confounds. Preserve failure/rate-limit/partial observations and costs. Judge anonymized order-swapped results; audit critical facts and acknowledge same-family judge bias. Different vendors do not imply independent errors.
+
+multimodel_experiment performs offline metadata preflight only. Even apparently approved JSON remains not_run because execution requires trusted authorization and a separately approved adapter. Missing API/budget/field authorization gives zero calls. Stop on missing authority, exhausted budget or unclear field consent; do not switch accounts/providers. Negative or inconclusive net benefit is retained; no automatic routing follows.
+
+Result template: status, exact model IDs/date, material and answer hashes, task family/split, resource observability, all failure observations, blinded judge results, executable/human evidence, effect uncertainty, costs, limitations and preregistered go/no-go. Real experiments and human outcomes are not_run.

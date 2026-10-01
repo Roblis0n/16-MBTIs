@@ -1,0 +1,6 @@
+{
+  "state": "uncalibrated",
+  "active": null,
+  "reason": "No target-environment evaluation, independent holdout or trusted activation approval",
+  "fallback": "heuristic"
+}

@@ -1,0 +1,130 @@
+{
+  "status": "design_proposal_not_calibrated",
+  "persona_tags": {
+    "intj": [
+      "structure",
+      "long_term",
+      "alternatives"
+    ],
+    "intp": [
+      "consistency",
+      "counterexample",
+      "boundaries"
+    ],
+    "entj": [
+      "execution",
+      "resources",
+      "accountability"
+    ],
+    "entp": [
+      "alternatives",
+      "counterexample",
+      "assumptions"
+    ],
+    "infj": [
+      "long_term",
+      "stakeholders",
+      "goal_alignment"
+    ],
+    "infp": [
+      "voice_fidelity",
+      "values",
+      "stakeholders"
+    ],
+    "enfj": [
+      "collaboration",
+      "stakeholders",
+      "goal_alignment"
+    ],
+    "enfp": [
+      "alternatives",
+      "novelty",
+      "user_experience"
+    ],
+    "istj": [
+      "constraints",
+      "process",
+      "regression"
+    ],
+    "isfj": [
+      "user_burden",
+      "exceptions",
+      "process"
+    ],
+    "estj": [
+      "execution",
+      "constraints",
+      "accountability"
+    ],
+    "esfj": [
+      "collaboration",
+      "user_burden",
+      "communication"
+    ],
+    "istp": [
+      "reproduction",
+      "boundaries",
+      "tools"
+    ],
+    "isfp": [
+      "user_experience",
+      "voice_fidelity",
+      "detail"
+    ],
+    "estp": [
+      "execution",
+      "reversibility",
+      "feedback"
+    ],
+    "esfp": [
+      "comprehension",
+      "user_experience",
+      "attention"
+    ]
+  },
+  "task_required_tags": {
+    "engineering": [
+      "reproduction",
+      "boundaries",
+      "constraints",
+      "counterexample",
+      "regression",
+      "user_burden"
+    ],
+    "factual": [
+      "consistency",
+      "assumptions",
+      "counterexample",
+      "boundaries"
+    ],
+    "decision": [
+      "constraints",
+      "resources",
+      "stakeholders",
+      "reversibility",
+      "long_term"
+    ],
+    "creative": [
+      "novelty",
+      "alternatives",
+      "voice_fidelity",
+      "user_experience"
+    ],
+    "inquiry": [
+      "assumptions",
+      "goal_alignment",
+      "comprehension",
+      "constraints"
+    ]
+  },
+  "legacy_task_aliases": {
+    "bug": "engineering",
+    "spec_hole": "engineering",
+    "design_review": "engineering",
+    "naming": "creative",
+    "estimate": "decision",
+    "incident": "engineering",
+    "refactor": "engineering",
+    "tech_choice": "decision"
+  }
+}

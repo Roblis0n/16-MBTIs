@@ -1,0 +1,20 @@
+{
+  "interface": {
+    "displayName": "16 Minds Local"
+  },
+  "name": "16minds-local",
+  "plugins": [
+    {
+      "category": "Productivity",
+      "name": "16-minds",
+      "policy": {
+        "authentication": "ON_INSTALL",
+        "installation": "AVAILABLE"
+      },
+      "source": {
+        "path": "./plugins/16-minds",
+        "source": "local"
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "cr_id": "CR-template-001",
+  "status": "proposed",
+  "problem": "填写真实冲突，不把此模板当获批变更",
+  "current_rule": "待填写并链接契约",
+  "proposed_change": "待提出最小改动",
+  "alternatives": [],
+  "affected_work_packages": [],
+  "affected_contracts": [],
+  "affected_tests": [],
+  "new_permissions": [],
+  "cost_and_privacy_impact": "待分析",
+  "rollback": "待制定",
+  "evidence_refs": [],
+  "requested_by": null,
+  "reviewed_by": null,
+  "approved_by": null,
+  "approved_at": null
+}

@@ -1,0 +1,114 @@
+{
+  "protocol_version": "1.0.0",
+  "personas": [
+    "intj",
+    "intp",
+    "entj",
+    "entp",
+    "infj",
+    "infp",
+    "enfj",
+    "enfp",
+    "istj",
+    "isfj",
+    "estj",
+    "esfj",
+    "istp",
+    "isfp",
+    "estp",
+    "esfp"
+  ],
+  "profiles": [
+    "code-review",
+    "premortem",
+    "decision-check",
+    "research-feasibility",
+    "journal",
+    "recheck",
+    "course-paper",
+    "event-plan",
+    "technical-proposal"
+  ],
+  "commands": [
+    {
+      "workflow": "one",
+      "skill": "minds-one",
+      "aliases": [
+        "mind",
+        "/mind"
+      ],
+      "fixed_n": 1,
+      "default_mode": "light"
+    },
+    {
+      "workflow": "many",
+      "skill": "minds",
+      "aliases": [
+        "minds",
+        "/minds"
+      ],
+      "fixed_n": null,
+      "default_mode": "middle"
+    },
+    {
+      "workflow": "pair",
+      "skill": "minds-pair",
+      "aliases": [
+        "pair",
+        "/pair"
+      ],
+      "fixed_n": 2,
+      "default_mode": "middle"
+    },
+    {
+      "workflow": "cast",
+      "skill": "minds-cast",
+      "aliases": [
+        "cast",
+        "/cast"
+      ],
+      "fixed_n": null,
+      "default_mode": "middle"
+    },
+    {
+      "workflow": "write",
+      "skill": "minds-write",
+      "aliases": [
+        "voice-write",
+        "/voice-write"
+      ],
+      "fixed_n": 1,
+      "default_mode": "light"
+    },
+    {
+      "workflow": "decide",
+      "skill": "minds-decide",
+      "aliases": [
+        "voice-decide",
+        "/voice-decide"
+      ],
+      "fixed_n": 1,
+      "default_mode": "light"
+    },
+    {
+      "workflow": "vote",
+      "skill": "minds-vote",
+      "aliases": [
+        "voice-vote",
+        "/voice-vote"
+      ],
+      "fixed_n": null,
+      "default_mode": "middle"
+    },
+    {
+      "workflow": "ask",
+      "skill": "minds-ask",
+      "aliases": [
+        "voice-ask",
+        "/voice-ask"
+      ],
+      "fixed_n": 1,
+      "default_mode": "light"
+    }
+  ]
+}

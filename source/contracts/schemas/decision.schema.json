@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://16minds.invalid/contracts/1.0.0/decision.schema.json",
+  "title": "decision",
+  "type": "object",
+  "properties": {
+    "run_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "decision_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "decision_version": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "decided",
+        "needs_information",
+        "no_feasible_option"
+      ]
+    },
+    "candidate_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 120,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+      },
+      "minItems": 2,
+      "uniqueItems": true
+    },
+    "selected": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "user_goal": {
+      "type": "string"
+    },
+    "hard_constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "strongest_case": {
+      "type": "string"
+    },
+    "weakest_case": {
+      "type": "string"
+    },
+    "risk": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "revisit_when": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "condition": {
+            "type": "string"
+          },
+          "observable_signal": {
+            "type": "string"
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 120,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+            }
+          },
+          "action_after_change": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "condition",
+          "observable_signal",
+          "evidence_ids",
+          "action_after_change"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "missing_information": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "violations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "candidate_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+          },
+          "constraint": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "candidate_id",
+          "constraint"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 120,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+      }
+    }
+  },
+  "required": [
+    "run_id",
+    "decision_id",
+    "decision_version",
+    "status",
+    "candidate_ids",
+    "selected",
+    "user_goal",
+    "hard_constraints",
+    "strongest_case",
+    "weakest_case",
+    "risk",
+    "revisit_when",
+    "missing_information",
+    "violations",
+    "evidence_ids"
+  ],
+  "additionalProperties": false
+}

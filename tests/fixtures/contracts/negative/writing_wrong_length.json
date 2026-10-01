@@ -1,0 +1,15 @@
+{
+  "run_id": "run-synthetic-001",
+  "source_version": "synthetic-v1",
+  "variant_id": "V1",
+  "operation": "rewrite",
+  "body": "这是合成例。",
+  "length_metric": "codepoints",
+  "actual_length": 999,
+  "invariant_status": "preserved",
+  "invariant_diff": [],
+  "evidence_ids": [],
+  "limitations": [
+    "这只校验字段示例，不是对模型改写质量的实测"
+  ]
+}

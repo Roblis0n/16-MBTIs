@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "baselines": [
+    "B0",
+    "B1",
+    "B2",
+    "B3",
+    "B4",
+    "B5",
+    "B6"
+  ],
+  "model_config": "same exact model/settings for B0\u2013B6; unknown values remain null",
+  "tool_scope": "same permissions; B5 verification allocation disclosed separately",
+  "scoring_version": "c06-1.0.0",
+  "verification_opportunities": "equal permitted opportunities; used calls recorded",
+  "budget_allocation": "pre-register token ceilings; if unobservable match actions and label action_matched",
+  "pilot": {
+    "planned_tasks": 12,
+    "engineering": 4,
+    "decision": 4,
+    "writing": 4,
+    "planned_development": 8,
+    "planned_sealed_holdout": 4,
+    "status": "not_run"
+  },
+  "judge": {
+    "anonymous": true,
+    "order_swapped": true,
+    "length_control": true,
+    "independent_audit": "required; not_run"
+  },
+  "release_thresholds": null,
+  "release_rule": "Safety/factual gates cannot regress; user practical thresholds and independent holdout required before changing defaults",
+  "sampling_unit": "project_group",
+  "public_fixtures": "12 synthetic authored development tasks with explicit public gold; no sealed claims"
+}

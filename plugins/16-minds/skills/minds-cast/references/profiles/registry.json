@@ -1,0 +1,278 @@
+{
+  "version": "1.0.0",
+  "profiles": [
+    {
+      "schema_version": "1.0.0",
+      "profile_id": "code-review",
+      "version": "1.0.0",
+      "name": "code-review",
+      "enabled": true,
+      "task_kind": "engineering",
+      "required_inputs": [
+        "checked_scope",
+        "snapshot_hash"
+      ],
+      "attention_tags": [
+        "correctness",
+        "boundary",
+        "operations",
+        "user-impact"
+      ],
+      "output_fields": [
+        "location",
+        "trigger",
+        "reproduction_status",
+        "impact",
+        "remedy",
+        "test",
+        "evidence"
+      ],
+      "allowed_tool_categories": [
+        "read_supplied"
+      ],
+      "voice": "persona",
+      "recommendation_mode": "informational",
+      "references": [],
+      "source_trust": "built_in",
+      "review_ref": "synthetic-protocol-tests"
+    },
+    {
+      "schema_version": "1.0.0",
+      "profile_id": "premortem",
+      "version": "1.0.0",
+      "name": "premortem",
+      "enabled": true,
+      "task_kind": "decision",
+      "required_inputs": [
+        "plan",
+        "horizon",
+        "success",
+        "failure",
+        "hard_constraints"
+      ],
+      "attention_tags": [
+        "mechanism",
+        "early-warning",
+        "prevention"
+      ],
+      "output_fields": [
+        "assumption",
+        "event",
+        "early_signal",
+        "prevention",
+        "response",
+        "stop_condition"
+      ],
+      "allowed_tool_categories": [
+        "read_supplied"
+      ],
+      "voice": "persona",
+      "recommendation_mode": "conditional_advice",
+      "references": [],
+      "source_trust": "built_in",
+      "review_ref": "synthetic-protocol-tests"
+    },
+    {
+      "schema_version": "1.0.0",
+      "profile_id": "decision-check",
+      "version": "1.0.0",
+      "name": "decision-check",
+      "enabled": true,
+      "task_kind": "decision",
+      "required_inputs": [
+        "decision_version",
+        "assumptions",
+        "hard_constraints"
+      ],
+      "attention_tags": [
+        "flip-condition",
+        "minimum-verification"
+      ],
+      "output_fields": [
+        "triggers",
+        "verification_actions"
+      ],
+      "allowed_tool_categories": [
+        "read_supplied"
+      ],
+      "voice": "persona",
+      "recommendation_mode": "conditional_advice",
+      "references": [],
+      "source_trust": "built_in",
+      "review_ref": "synthetic-protocol-tests"
+    },
+    {
+      "schema_version": "1.0.0",
+      "profile_id": "research-feasibility",
+      "version": "1.0.0",
+      "name": "research-feasibility",
+      "enabled": true,
+      "task_kind": "inquiry",
+      "required_inputs": [
+        "question",
+        "requirements",
+        "data_sources",
+        "deadline"
+      ],
+      "attention_tags": [
+        "method",
+        "data",
+        "delivery"
+      ],
+      "output_fields": [
+        "data_requirements",
+        "identification",
+        "minimum_deliverable"
+      ],
+      "allowed_tool_categories": [
+        "read_supplied"
+      ],
+      "voice": "persona",
+      "recommendation_mode": "informational",
+      "references": [],
+      "source_trust": "built_in",
+      "review_ref": "synthetic-protocol-tests"
+    },
+    {
+      "schema_version": "1.0.0",
+      "profile_id": "journal",
+      "version": "1.0.0",
+      "name": "journal",
+      "enabled": true,
+      "task_kind": "decision",
+      "required_inputs": [
+        "decision_version",
+        "recommendation",
+        "user_actual_choice"
+      ],
+      "attention_tags": [
+        "provenance",
+        "outcome-vs-process"
+      ],
+      "output_fields": [
+        "entry",
+        "review"
+      ],
+      "allowed_tool_categories": [
+        "read_supplied"
+      ],
+      "voice": "persona",
+      "recommendation_mode": "conditional_advice",
+      "references": [],
+      "source_trust": "built_in",
+      "review_ref": "synthetic-protocol-tests"
+    },
+    {
+      "schema_version": "1.0.0",
+      "profile_id": "recheck",
+      "version": "1.0.0",
+      "name": "recheck",
+      "enabled": true,
+      "task_kind": "factual",
+      "required_inputs": [
+        "evidence_change",
+        "dependency_graph"
+      ],
+      "attention_tags": [
+        "staleness",
+        "dependencies"
+      ],
+      "output_fields": [
+        "affected_nodes",
+        "node_status"
+      ],
+      "allowed_tool_categories": [
+        "read_supplied"
+      ],
+      "voice": "persona",
+      "recommendation_mode": "informational",
+      "references": [],
+      "source_trust": "built_in",
+      "review_ref": "synthetic-protocol-tests"
+    },
+    {
+      "schema_version": "1.0.0",
+      "profile_id": "course-paper",
+      "version": "1.0.0",
+      "name": "course-paper",
+      "enabled": true,
+      "task_kind": "inquiry",
+      "required_inputs": [
+        "question",
+        "course_requirements",
+        "available_data"
+      ],
+      "attention_tags": [
+        "method",
+        "delivery"
+      ],
+      "output_fields": [
+        "minimum_deliverable"
+      ],
+      "allowed_tool_categories": [
+        "read_supplied"
+      ],
+      "voice": "persona",
+      "recommendation_mode": "informational",
+      "references": [],
+      "source_trust": "built_in",
+      "review_ref": "synthetic-protocol-tests"
+    },
+    {
+      "schema_version": "1.0.0",
+      "profile_id": "event-plan",
+      "version": "1.0.0",
+      "name": "event-plan",
+      "enabled": true,
+      "task_kind": "decision",
+      "required_inputs": [
+        "plan",
+        "budget",
+        "roles"
+      ],
+      "attention_tags": [
+        "risk",
+        "operations"
+      ],
+      "output_fields": [
+        "failure_paths"
+      ],
+      "allowed_tool_categories": [
+        "read_supplied"
+      ],
+      "voice": "persona",
+      "recommendation_mode": "conditional_advice",
+      "references": [],
+      "source_trust": "built_in",
+      "review_ref": "synthetic-protocol-tests"
+    },
+    {
+      "schema_version": "1.0.0",
+      "profile_id": "technical-proposal",
+      "version": "1.0.0",
+      "name": "technical-proposal",
+      "enabled": true,
+      "task_kind": "engineering",
+      "required_inputs": [
+        "proposal",
+        "constraints"
+      ],
+      "attention_tags": [
+        "correctness",
+        "maintainability"
+      ],
+      "output_fields": [
+        "findings",
+        "verification_actions"
+      ],
+      "allowed_tool_categories": [
+        "read_supplied"
+      ],
+      "voice": "persona",
+      "recommendation_mode": "informational",
+      "references": [],
+      "source_trust": "built_in",
+      "review_ref": "synthetic-protocol-tests"
+    }
+  ]
+}

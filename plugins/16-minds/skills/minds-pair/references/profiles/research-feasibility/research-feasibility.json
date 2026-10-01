@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "research-feasibility",
+  "version": "1.0.0",
+  "name": "research-feasibility",
+  "enabled": true,
+  "task_kind": "inquiry",
+  "required_inputs": [
+    "question",
+    "requirements",
+    "data_sources",
+    "deadline"
+  ],
+  "attention_tags": [
+    "method",
+    "data",
+    "delivery"
+  ],
+  "output_fields": [
+    "data_requirements",
+    "identification",
+    "minimum_deliverable"
+  ],
+  "allowed_tool_categories": [
+    "read_supplied"
+  ],
+  "voice": "persona",
+  "recommendation_mode": "informational",
+  "references": [],
+  "source_trust": "built_in",
+  "review_ref": "synthetic-protocol-tests"
+}

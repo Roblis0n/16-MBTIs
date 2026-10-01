@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://16minds.invalid/contracts/1.0.0/claim.schema.json",
+  "title": "claim",
+  "type": "object",
+  "properties": {
+    "claim_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "actor_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "factual",
+        "value_preference",
+        "hypothesis"
+      ]
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "subject_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "scope": {
+      "type": "string"
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 120,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+      },
+      "uniqueItems": true
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "supported",
+        "refuted",
+        "unverified",
+        "not_applicable"
+      ]
+    },
+    "counter_claim_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 120,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+      },
+      "uniqueItems": true
+    },
+    "supersedes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "change_condition": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "claim_id",
+    "revision",
+    "actor_id",
+    "kind",
+    "text",
+    "subject_id",
+    "scope",
+    "assumptions",
+    "evidence_ids",
+    "status",
+    "counter_claim_ids",
+    "supersedes",
+    "change_condition"
+  ],
+  "additionalProperties": false
+}

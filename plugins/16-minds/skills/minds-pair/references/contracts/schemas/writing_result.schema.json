@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://16minds.invalid/contracts/1.0.0/writing_result.schema.json",
+  "title": "writing_result",
+  "type": "object",
+  "properties": {
+    "run_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "source_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "variant_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "operation": {
+      "type": "string",
+      "enum": [
+        "write",
+        "rewrite"
+      ]
+    },
+    "body": {
+      "type": "string"
+    },
+    "length_metric": {
+      "type": "string",
+      "enum": [
+        "codepoints",
+        "words"
+      ]
+    },
+    "actual_length": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "invariant_status": {
+      "type": "string",
+      "enum": [
+        "preserved",
+        "authorized_change",
+        "review_needed",
+        "violation",
+        "not_applicable"
+      ]
+    },
+    "invariant_diff": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string",
+            "enum": [
+              "number",
+              "entity",
+              "date",
+              "unit",
+              "negation",
+              "condition",
+              "commitment",
+              "causality",
+              "stance",
+              "structural_number"
+            ]
+          },
+          "source_span": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "before": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "after": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "preserved",
+              "authorized_change",
+              "review_needed",
+              "violation"
+            ]
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "category",
+          "source_span",
+          "before",
+          "after",
+          "status",
+          "reason"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 120,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "run_id",
+    "source_version",
+    "variant_id",
+    "operation",
+    "body",
+    "length_metric",
+    "actual_length",
+    "invariant_status",
+    "invariant_diff",
+    "evidence_ids",
+    "limitations"
+  ],
+  "additionalProperties": false
+}

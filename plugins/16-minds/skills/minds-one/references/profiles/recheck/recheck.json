@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "recheck",
+  "version": "1.0.0",
+  "name": "recheck",
+  "enabled": true,
+  "task_kind": "factual",
+  "required_inputs": [
+    "evidence_change",
+    "dependency_graph"
+  ],
+  "attention_tags": [
+    "staleness",
+    "dependencies"
+  ],
+  "output_fields": [
+    "affected_nodes",
+    "node_status"
+  ],
+  "allowed_tool_categories": [
+    "read_supplied"
+  ],
+  "voice": "persona",
+  "recommendation_mode": "informational",
+  "references": [],
+  "source_trust": "built_in",
+  "review_ref": "synthetic-protocol-tests"
+}

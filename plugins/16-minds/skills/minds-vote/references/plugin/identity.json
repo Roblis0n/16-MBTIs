@@ -1,0 +1,25 @@
+{
+  "name": "16-minds",
+  "version": "0.5.0",
+  "description": "面向 Codex 的 16 种 MBTI 风格思考视角，提供分析、讨论、配役、写作、决策、投票与提问八个技能，以及本地协议和预算校验。0.5.0 开发候选，完整宿主验收尚未完成。",
+  "author": {
+    "name": "yukurash"
+  },
+  "license": "MIT",
+  "interface": {
+    "displayName": "16 Minds",
+    "shortDescription": "用十六种思考视角分析、讨论、写作与决策",
+    "longDescription": "16 Minds 用十六种 MBTI 风格的角色设计组织分析、讨论、配役、写作、决策、合成投票和澄清提问。八个自包含技能结合 Python 标准库 helper，校验角色人数、预算、状态、证据引用与文本不变量。宿主模型负责生成与真实工具调用；默认不保存、不联网、不调用额外模型。当前为 0.5.0 static_candidate，完整宿主验收和独立校准尚未完成，Windows 安全持久化暂不支持。",
+    "developerName": "yukurash (original project); Codex migration",
+    "category": "Productivity",
+    "capabilities": [
+      "Eight host-driven workflows",
+      "Deterministic scheduling and validation",
+      "Opt-in local records",
+      "Experimental controlled profiles"
+    ],
+    "defaultPrompt": [
+      "用16 Minds处理我提供的材料，保留事实、权限、预算和当前执行限制。"
+    ]
+  }
+}

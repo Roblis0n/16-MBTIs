@@ -1,0 +1,49 @@
+{
+  "protocol_version": "1.0.0",
+  "codes": [
+    "E_UNKNOWN_ARGUMENT",
+    "E_INVALID_PERSONA",
+    "E_CONSTRAINT_CONFLICT",
+    "E_MISSING_SOURCE",
+    "E_SCHEMA",
+    "E_SEMANTIC",
+    "E_UNKNOWN_EVIDENCE",
+    "E_UNOBSERVED_SUPPORT",
+    "E_SCORE_OBJECT_MISMATCH",
+    "E_STALE_BALLOT",
+    "E_BUDGET_TOO_SMALL",
+    "E_BUDGET_EXHAUSTED",
+    "E_CAPABILITY",
+    "E_PERMISSION",
+    "E_CONTEXT_INCOMPLETE",
+    "E_DISPATCH_UNKNOWN",
+    "E_PATH_ESCAPE",
+    "E_SYMLINK",
+    "E_EXISTS",
+    "E_PROFILE_CYCLE",
+    "E_CALIBRATION_MISMATCH",
+    "E_INTERNAL",
+    "E_PATH_OUTSIDE_ROOT",
+    "E_CONCURRENT_MODIFICATION"
+  ],
+  "business_statuses": [
+    "needs_information",
+    "no_feasible_option",
+    "abstain"
+  ],
+  "fields": [
+    "machine_code",
+    "public_message",
+    "layer",
+    "retryable",
+    "side_effect_status",
+    "safe_next_step"
+  ],
+  "exit_codes": {
+    "success": 0,
+    "input_shape_semantic": 2,
+    "capability_permission": 3,
+    "resource": 4,
+    "internal": 5
+  }
+}

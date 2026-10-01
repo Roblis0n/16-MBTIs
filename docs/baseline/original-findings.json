@@ -1,0 +1,152 @@
+[
+  {
+    "id": "F01",
+    "severity": "P0",
+    "description": "多轮丢失自己的原主张、限定与修改历史",
+    "source_locator": "commands/pair.md:80,106–113,143；commands/minds.md 深挖/反驳段",
+    "recheck_status": "static_confirmed",
+    "recheck": "Original pair explicitly omits own past outputs; minds later calls lack explicit own history. Static confirmation.",
+    "remediation_status": "pending_final_evidence",
+    "evidence_refs": []
+  },
+  {
+    "id": "F02",
+    "severity": "P0",
+    "description": "cast 短榜只有5人且追加rival可能得到N+1",
+    "source_locator": "commands/cast.md:27,65–69；casting.json:287–344",
+    "recheck_status": "static_confirmed",
+    "recheck": "Original cast takes N from a five-person shortlist then adds rival; length can differ from N. Static confirmation.",
+    "remediation_status": "pending_final_evidence",
+    "evidence_refs": []
+  },
+  {
+    "id": "F03",
+    "severity": "P1",
+    "description": "固定前缀取人使小N系统性缺少后半视角",
+    "source_locator": "commands/minds.md:15,20",
+    "recheck_status": "static_confirmed",
+    "recheck": "minds --n selects prefix of fixed ID order. Static confirmation.",
+    "remediation_status": "pending_final_evidence",
+    "evidence_refs": []
+  },
+  {
+    "id": "F04",
+    "severity": "P0",
+    "description": "旧实验外推与更正后的检测率未同步",
+    "source_locator": "casting.json；作者 RESULTS/ERRATA/detection_main",
+    "recheck_status": "partial",
+    "recheck": "Original cast quotes old detection range and casting is historical; external corrected experiment not independently fetched in this audit. Historical mismatch requires provenance, not blanket claim all fitness wrong.",
+    "remediation_status": "pending_final_evidence",
+    "evidence_refs": []
+  },
+  {
+    "id": "F05",
+    "severity": "P1",
+    "description": "统计示例不一致、角色重复归桶与跨对象评分",
+    "source_locator": "commands/minds.md:98；Outputs/qiita-title-discussion.md:13–28,80",
+    "recheck_status": "static_confirmed",
+    "recheck": "minds distribution example inconsistent; qiita aggregate duplicates ESTP across score4 and5, and original rows score different titles. Static confirmation.",
+    "remediation_status": "pending_final_evidence",
+    "evidence_refs": []
+  },
+  {
+    "id": "F06",
+    "severity": "P0",
+    "description": "信息不足仍强制决策，重试没有明确上限",
+    "source_locator": "skills/voice-decide/SKILL.md:37,83",
+    "recheck_status": "static_confirmed",
+    "recheck": "decide forbids uncertainty and requests repeated forced selection without upper bound. Static confirmation.",
+    "remediation_status": "pending_final_evidence",
+    "evidence_refs": []
+  },
+  {
+    "id": "F07",
+    "severity": "P0",
+    "description": "1赞成15保留也可通过；合成票可能被误解为人群支持",
+    "source_locator": "skills/voice-vote/SKILL.md:64–65,117–118",
+    "recheck_status": "static_confirmed",
+    "recheck": "vote passes when yes>no regardless abstentions; yes1/no0/abstain15 passes original rule. Static arithmetic confirmation.",
+    "remediation_status": "pending_final_evidence",
+    "evidence_refs": []
+  },
+  {
+    "id": "F08",
+    "severity": "P0",
+    "description": "假定所有反对均可妥协；改提案后未要求有效重投",
+    "source_locator": "skills/voice-vote/SKILL.md heavy 流程",
+    "recheck_status": "static_confirmed",
+    "recheck": "vote heavy demands compromise and combined revision; no required new ballot. Static confirmation.",
+    "remediation_status": "pending_final_evidence",
+    "evidence_refs": []
+  },
+  {
+    "id": "F09",
+    "severity": "P0",
+    "description": "去AI味要求可诱导无依据数字/经历/因果强化",
+    "source_locator": "skills/voice-write/SKILL.md:55–58；Outputs 标题例",
+    "recheck_status": "static_confirmed",
+    "recheck": "write mandates numbers and offers many→about half despite forbidding invented experience. Static confirmation.",
+    "remediation_status": "pending_final_evidence",
+    "evidence_refs": []
+  },
+  {
+    "id": "F10",
+    "severity": "P1",
+    "description": "共同写作规则可能抹平角色特点，长度约定漂移",
+    "source_locator": "skills/voice-write/SKILL.md；agents/entj.md",
+    "recheck_status": "static_confirmed",
+    "recheck": "write bans conclusion-first and contains two conflicting default length ranges. Static confirmation; whole persona preservation assessed separately.",
+    "remediation_status": "pending_final_evidence",
+    "evidence_refs": []
+  },
+  {
+    "id": "F11",
+    "severity": "P1",
+    "description": "固定深挖人数、强制争议，N小或无分歧不成立",
+    "source_locator": "commands/minds.md；commands/pair.md",
+    "recheck_status": "static_confirmed",
+    "recheck": "minds requires3–5 deep-dives and opposing views even when smallN/unanimous. Static confirmation.",
+    "remediation_status": "pending_final_evidence",
+    "evidence_refs": []
+  },
+  {
+    "id": "F12",
+    "severity": "P1",
+    "description": "缺少统一预算、重试、开放线程与取消管理",
+    "source_locator": "commands/minds.md heavy；跨入口调度",
+    "recheck_status": "static_confirmed",
+    "recheck": "Original workflows require parallel calls and no unified open-thread/turn/retry/cancel accounting. Static confirmation.",
+    "remediation_status": "pending_final_evidence",
+    "evidence_refs": []
+  },
+  {
+    "id": "F13",
+    "severity": "P1",
+    "description": "参数优先级、入口引用、questions_only等约定冲突",
+    "source_locator": "commands/pair.md；commands/cast.md；skills/voice-ask/SKILL.md",
+    "recheck_status": "static_confirmed",
+    "recheck": "pair parsing --rival consumes one persona but later says explicit b wins; ask questions-only conflicts heavy why. Static confirmation.",
+    "remediation_status": "pending_final_evidence",
+    "evidence_refs": []
+  },
+  {
+    "id": "F14",
+    "severity": "P1",
+    "description": "日志忽略不一致，路径覆盖/隐私/并发边界不明确",
+    "source_locator": "根 .gitignore；各写出日志的工作流",
+    "recheck_status": "static_confirmed",
+    "recheck": "gitignore covers minds timestamp logs but vote saves separate names; output paths taken as supplied and second-resolution filename collisions unaddressed. Static confirmation.",
+    "remediation_status": "pending_final_evidence",
+    "evidence_refs": []
+  },
+  {
+    "id": "F15",
+    "severity": "P1",
+    "description": "原文、人格自信与多数可能压过可核查证据",
+    "source_locator": "agents/*.md；所有最终综合流程",
+    "recheck_status": "static_confirmed",
+    "recheck": "Original workflows copy outputs verbatim and integrate opinions without explicit evidence validation. Risk confirmed statically; not a behavioral exploit claim.",
+    "remediation_status": "pending_final_evidence",
+    "evidence_refs": []
+  }
+]

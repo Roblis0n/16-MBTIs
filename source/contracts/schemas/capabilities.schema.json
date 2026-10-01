@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://16minds.invalid/contracts/1.0.0/capabilities.schema.json",
+  "title": "capabilities",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "host_surface": {
+      "type": "string"
+    },
+    "host_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "os": {
+      "type": "string"
+    },
+    "python_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "native_delegation": {
+      "type": "string",
+      "enum": [
+        "documented",
+        "observed",
+        "unsupported",
+        "unknown"
+      ]
+    },
+    "tool_schema_hash": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "open_thread_cap": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "isolation_status": {
+      "type": "string",
+      "enum": [
+        "verified_clean",
+        "unknown",
+        "unavailable",
+        "not_applicable"
+      ]
+    },
+    "read_only_status": {
+      "type": "string",
+      "enum": [
+        "documented",
+        "observed",
+        "unsupported",
+        "unknown"
+      ]
+    },
+    "close_supported": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "host_surface",
+    "host_version",
+    "os",
+    "python_version",
+    "native_delegation",
+    "tool_schema_hash",
+    "open_thread_cap",
+    "isolation_status",
+    "read_only_status",
+    "close_supported",
+    "observed_at",
+    "evidence_refs",
+    "limitations"
+  ],
+  "additionalProperties": false
+}

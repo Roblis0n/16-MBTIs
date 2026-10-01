@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://16minds.invalid/contracts/1.0.0/interview_state.schema.json",
+  "title": "interview_state",
+  "type": "object",
+  "properties": {
+    "run_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "ask_mode": {
+      "type": "string",
+      "enum": [
+        "questions",
+        "interview"
+      ]
+    },
+    "include_why": {
+      "type": "boolean"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ready",
+        "waiting_user",
+        "completed",
+        "stopped"
+      ]
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "question_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+          },
+          "text": {
+            "type": "string"
+          },
+          "why": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "target_uncertainty": {
+            "type": "string"
+          },
+          "answer_status": {
+            "type": "string",
+            "enum": [
+              "unasked",
+              "answered",
+              "unknown",
+              "declined",
+              "skipped"
+            ]
+          },
+          "answer_summary": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "question_id",
+          "text",
+          "why",
+          "target_uncertainty",
+          "answer_status",
+          "answer_summary"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "active_question_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "asked_turns": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "max_interview_turns": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 20
+    },
+    "stop_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "persisted": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "run_id",
+    "ask_mode",
+    "include_why",
+    "status",
+    "questions",
+    "active_question_id",
+    "asked_turns",
+    "max_interview_turns",
+    "stop_reason",
+    "persisted"
+  ],
+  "additionalProperties": false
+}

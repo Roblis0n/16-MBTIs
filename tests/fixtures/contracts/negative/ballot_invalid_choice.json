@@ -1,0 +1,11 @@
+{
+  "run_id": "run-synthetic-001",
+  "proposal_id": "proposal-demo",
+  "proposal_version": "v1",
+  "voter_id": "intj",
+  "ballot_revision": 1,
+  "choice": "missing",
+  "reason": "模拟信息不足，弃权合法。",
+  "conditions": [],
+  "supersedes": null
+}

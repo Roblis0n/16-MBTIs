@@ -1,0 +1,13 @@
+{
+  "protocol_version": "1.0.0",
+  "source": "readonly-plan/00_governance/requirements.json",
+  "source_sha256": "cb0fd14b5162fd93a62af0bde8fa2174186a3687ba552c20dfe7b028e5713340",
+  "governance_note": "User authorized all32WPs continuously; business/safety/budget/evidence contracts remain normative. Scope approval is not human gate acceptance.",
+  "exact_test_matrix": "reports/one-shot/traceability-tests.json",
+  "wp_matrix": "reports/one-shot/traceability-work-packages.json",
+  "command_registry": "source/commands/registry.json",
+  "normalizer": "runtime/minds/normalize.py",
+  "change_overlay": "reports/one-shot/traceability-errata.json",
+  "approved_by": null,
+  "approved_at": null
+}

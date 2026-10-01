@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "host_surface": "synthetic-host",
+  "host_version": null,
+  "os": "unknown",
+  "python_version": null,
+  "native_delegation": "unknown",
+  "tool_schema_hash": null,
+  "open_thread_cap": null,
+  "isolation_status": "unknown",
+  "read_only_status": "unknown",
+  "close_supported": null,
+  "observed_at": "2026-09-27T00:00:00Z",
+  "evidence_refs": [],
+  "limitations": [
+    "仅schema示例，未检查用户实际宿主"
+  ]
+}

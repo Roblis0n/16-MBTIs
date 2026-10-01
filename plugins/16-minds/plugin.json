@@ -1,0 +1,6 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "description": "面向 Codex 的 16 种 MBTI 风格思考视角，提供分析、讨论、配役、写作、决策、投票与提问八个技能，以及本地协议和预算校验。0.5.0 开发候选，完整宿主验收尚未完成。",
+  "name": "16-minds",
+  "version": "0.5.0"
+}

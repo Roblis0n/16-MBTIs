@@ -1,0 +1,120 @@
+{
+  "synthetic": true,
+  "authoring": "Current model-authored code and review text; no generated claim of independent agents",
+  "cases": [
+    {
+      "case_id": "timer-bug",
+      "file": "timer_bug.py",
+      "family": "timer",
+      "expected_assertion_exit": 1,
+      "finding_drafts": [
+        {
+          "location": {
+            "file": "timer_bug.py",
+            "start_line": 5,
+            "end_line": 6
+          },
+          "trigger": "mount/unmount/mount/unmount",
+          "root_cause": "unmount omits removing registered timer",
+          "reproduction_status": "reproduced",
+          "impact": "two logical timers remain after two cleanups",
+          "remedy": "remove corresponding registered timer during unmount",
+          "test": "two mount/unmount cycles must leave active empty",
+          "evidence": [
+            "synthetic-timer-execution"
+          ],
+          "source_refs": [
+            "authored-review-timer_bug.py"
+          ]
+        }
+      ],
+      "synthetic": true,
+      "scope_limit": "Only the supplied small function and explicit regression assertion; no repository or production claim."
+    },
+    {
+      "case_id": "timer-control",
+      "file": "timer_control.py",
+      "family": "timer",
+      "expected_assertion_exit": 0,
+      "finding_drafts": [],
+      "synthetic": true,
+      "scope_limit": "Only the supplied small function and explicit regression assertion; no repository or production claim."
+    },
+    {
+      "case_id": "default-bug",
+      "file": "default_bug.py",
+      "family": "default",
+      "expected_assertion_exit": 1,
+      "finding_drafts": [
+        {
+          "location": {
+            "file": "default_bug.py",
+            "start_line": 2,
+            "end_line": 3
+          },
+          "trigger": "two add_item calls each omit items",
+          "root_cause": "mutable default list is shared across calls",
+          "reproduction_status": "reproduced",
+          "impact": "second result contains the first independent item",
+          "remedy": "allocate a fresh list when items is None",
+          "test": "add_item B after add_item A must equal [B]",
+          "evidence": [
+            "synthetic-default-execution"
+          ],
+          "source_refs": [
+            "authored-review-default_bug.py"
+          ]
+        }
+      ],
+      "synthetic": true,
+      "scope_limit": "Only the supplied small function and explicit regression assertion; no repository or production claim."
+    },
+    {
+      "case_id": "default-control",
+      "file": "default_control.py",
+      "family": "default",
+      "expected_assertion_exit": 0,
+      "finding_drafts": [],
+      "synthetic": true,
+      "scope_limit": "Only the supplied small function and explicit regression assertion; no repository or production claim."
+    },
+    {
+      "case_id": "parser-bug",
+      "file": "parser_bug.py",
+      "family": "parser",
+      "expected_assertion_exit": 1,
+      "finding_drafts": [
+        {
+          "location": {
+            "file": "parser_bug.py",
+            "start_line": 3,
+            "end_line": 3
+          },
+          "trigger": "parse_cost receives NaN",
+          "root_cause": "float conversion accepts non-finite input without a finiteness guard",
+          "reproduction_status": "reproduced",
+          "impact": "non-finite value enters cost calculations",
+          "remedy": "reject non-finite parsed values before returning",
+          "test": "NaN must raise ValueError; ordinary 3.5 must still parse",
+          "evidence": [
+            "synthetic-parser-execution"
+          ],
+          "source_refs": [
+            "authored-review-parser_bug.py"
+          ]
+        }
+      ],
+      "synthetic": true,
+      "scope_limit": "Only the supplied small function and explicit regression assertion; no repository or production claim."
+    },
+    {
+      "case_id": "parser-control",
+      "file": "parser_control.py",
+      "family": "parser",
+      "expected_assertion_exit": 0,
+      "finding_drafts": [],
+      "synthetic": true,
+      "scope_limit": "Only the supplied small function and explicit regression assertion; no repository or production claim."
+    }
+  ]
+}

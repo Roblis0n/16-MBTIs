@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://16minds.invalid/contracts/1.0.0/change_request.schema.json",
+  "title": "change_request",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "cr_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "proposed",
+        "recommended",
+        "approved",
+        "rejected",
+        "withdrawn"
+      ]
+    },
+    "problem": {
+      "type": "string"
+    },
+    "current_rule": {
+      "type": "string"
+    },
+    "proposed_change": {
+      "type": "string"
+    },
+    "alternatives": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "affected_work_packages": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 120,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+      }
+    },
+    "affected_contracts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "affected_tests": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 120,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+      }
+    },
+    "new_permissions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cost_and_privacy_impact": {
+      "type": "string"
+    },
+    "rollback": {
+      "type": "string"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "requested_by": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "reviewed_by": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "approved_by": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "approved_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "schema_version",
+    "cr_id",
+    "status",
+    "problem",
+    "current_rule",
+    "proposed_change",
+    "alternatives",
+    "affected_work_packages",
+    "affected_contracts",
+    "affected_tests",
+    "new_permissions",
+    "cost_and_privacy_impact",
+    "rollback",
+    "evidence_refs",
+    "requested_by",
+    "reviewed_by",
+    "approved_by",
+    "approved_at"
+  ],
+  "additionalProperties": false
+}

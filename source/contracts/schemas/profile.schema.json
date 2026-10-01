@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://16minds.invalid/contracts/1.0.0/profile.schema.json",
+  "title": "profile",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "profile_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "version": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "task_kind": {
+      "type": "string",
+      "enum": [
+        "creative",
+        "decision",
+        "factual",
+        "engineering",
+        "inquiry"
+      ]
+    },
+    "required_inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "attention_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "output_fields": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allowed_tool_categories": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "read_supplied",
+          "public_retrieval",
+          "controlled_test"
+        ]
+      }
+    },
+    "voice": {
+      "type": "string",
+      "enum": [
+        "persona",
+        "neutral"
+      ]
+    },
+    "recommendation_mode": {
+      "type": "string",
+      "enum": [
+        "informational",
+        "conditional_advice"
+      ]
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_trust": {
+      "type": "string",
+      "enum": [
+        "built_in",
+        "user_untrusted"
+      ]
+    },
+    "review_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "profile_id",
+    "version",
+    "name",
+    "enabled",
+    "task_kind",
+    "required_inputs",
+    "attention_tags",
+    "output_fields",
+    "allowed_tool_categories",
+    "voice",
+    "recommendation_mode",
+    "references",
+    "source_trust",
+    "review_ref"
+  ],
+  "additionalProperties": false
+}

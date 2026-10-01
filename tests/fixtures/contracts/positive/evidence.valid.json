@@ -1,0 +1,14 @@
+{
+  "evidence_id": "E1",
+  "kind": "provided_file",
+  "locator": "synthetic/example.py:L1-L3",
+  "content_hash": null,
+  "observed_at": null,
+  "access_status": "not_accessed",
+  "trust_class": "untrusted_content",
+  "source_version": "fixture-v1",
+  "scope": "合成示例",
+  "excerpt_or_summary": "此fixture未声称读取真实项目。",
+  "derived_from": [],
+  "observation": null
+}

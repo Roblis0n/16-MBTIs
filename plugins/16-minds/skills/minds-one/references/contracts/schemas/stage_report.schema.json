@@ -1,0 +1,239 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://16minds.invalid/contracts/1.0.0/stage_report.schema.json",
+  "title": "stage_report",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "stage_id": {
+      "type": "string",
+      "enum": [
+        "S00",
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05",
+        "S06",
+        "S07",
+        "S08",
+        "S09",
+        "S10",
+        "S11",
+        "S12"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pass",
+        "partial",
+        "blocked",
+        "failed",
+        "not_run",
+        "skipped"
+      ]
+    },
+    "is_template": {
+      "type": "boolean"
+    },
+    "work_packages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pass",
+              "partial",
+              "blocked",
+              "failed",
+              "not_run",
+              "skipped"
+            ]
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "limitations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "status",
+          "evidence_refs",
+          "limitations"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "repo_root": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "before_snapshot_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "after_snapshot_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "changed_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "test_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "test_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pass",
+              "partial",
+              "blocked",
+              "failed",
+              "not_run",
+              "skipped"
+            ]
+          },
+          "command_argv": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "exit_code": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "evidence_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "not_run_reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "test_id",
+          "status",
+          "command_argv",
+          "exit_code",
+          "evidence_ref",
+          "not_run_reason"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "scope_report_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "authorization_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "change_request_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unresolved_risks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "next_stage_recommendation": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "reviewed_by": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "approved_by": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "approved_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "schema_version",
+    "stage_id",
+    "status",
+    "is_template",
+    "work_packages",
+    "repo_root",
+    "before_snapshot_ref",
+    "after_snapshot_ref",
+    "changed_paths",
+    "test_results",
+    "scope_report_ref",
+    "authorization_refs",
+    "change_request_refs",
+    "unresolved_risks",
+    "next_stage_recommendation",
+    "reviewed_by",
+    "approved_by",
+    "approved_at"
+  ],
+  "additionalProperties": false
+}

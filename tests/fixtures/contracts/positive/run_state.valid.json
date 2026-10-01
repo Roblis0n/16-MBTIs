@@ -1,0 +1,36 @@
+{
+  "protocol_version": "1.0.0",
+  "run_id": "run-synthetic-001",
+  "parent_run_id": null,
+  "status": "created",
+  "execution_mode": "native_sequential",
+  "isolation_status": "unknown",
+  "input_hash": null,
+  "round": 0,
+  "actor_ids": [
+    "intj",
+    "istp",
+    "isfj",
+    "entp"
+  ],
+  "completed_actor_ids": [],
+  "spent_agent_turns": 0,
+  "spent_verification_actions": 0,
+  "budget": {
+    "max_rounds": 2,
+    "max_agent_turns": 8,
+    "max_verification_actions": 2,
+    "max_repairs_per_result": 1,
+    "concurrency_cap": null,
+    "soft_deadline_seconds": 300,
+    "agent_output_target_codepoints": 1000,
+    "final_summary_target_codepoints": 2500
+  },
+  "pending_action_ids": [],
+  "residual_thread_ids": [],
+  "cleanup_status": "not_required",
+  "stop_reason": null,
+  "observed_tokens": null,
+  "observed_tool_calls": null,
+  "events_ref": null
+}

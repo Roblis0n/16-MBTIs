@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "research-feasibility",
+  "version": "draft-1",
+  "name": "研究可行性",
+  "enabled": false,
+  "task_kind": "decision",
+  "required_inputs": [
+    "research_question",
+    "deadline",
+    "available_materials"
+  ],
+  "attention_tags": [
+    "data_access",
+    "identification",
+    "deliverability"
+  ],
+  "output_fields": [
+    "blocking_assumption",
+    "minimum_check",
+    "fallback_design"
+  ],
+  "allowed_tool_categories": [
+    "read_supplied"
+  ],
+  "voice": "persona",
+  "recommendation_mode": "conditional_advice",
+  "references": [],
+  "source_trust": "built_in",
+  "review_ref": null
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "journal",
+  "version": "1.0.0",
+  "name": "journal",
+  "enabled": true,
+  "task_kind": "decision",
+  "required_inputs": [
+    "decision_version",
+    "recommendation",
+    "user_actual_choice"
+  ],
+  "attention_tags": [
+    "provenance",
+    "outcome-vs-process"
+  ],
+  "output_fields": [
+    "entry",
+    "review"
+  ],
+  "allowed_tool_categories": [
+    "read_supplied"
+  ],
+  "voice": "persona",
+  "recommendation_mode": "conditional_advice",
+  "references": [],
+  "source_trust": "built_in",
+  "review_ref": "synthetic-protocol-tests"
+}

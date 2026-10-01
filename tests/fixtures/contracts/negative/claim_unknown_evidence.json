@@ -1,0 +1,19 @@
+{
+  "claim_id": "C1",
+  "revision": 1,
+  "actor_id": "intp",
+  "kind": "hypothesis",
+  "text": "合成示例待核查的假设。",
+  "subject_id": "synthetic-example",
+  "scope": "仅fixture",
+  "assumptions": [
+    "材料尚未实际读取"
+  ],
+  "evidence_ids": [
+    "E99"
+  ],
+  "status": "unverified",
+  "counter_claim_ids": [],
+  "supersedes": null,
+  "change_condition": "实际读取并验证相关路径。"
+}

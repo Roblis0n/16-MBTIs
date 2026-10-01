@@ -1,0 +1,27 @@
+{
+  "run_id": "run-synthetic-001",
+  "requested_n": 1,
+  "members": [
+    {
+      "actor_id": "intp",
+      "source": "locked",
+      "newly_covered_tags": [
+        "consistency"
+      ],
+      "reason": "合成例中的用户锁定选择"
+    }
+  ],
+  "required_tags": [
+    "consistency",
+    "reproduction"
+  ],
+  "uncovered_tags": [
+    "reproduction"
+  ],
+  "calibration_state": "uncalibrated",
+  "calibration_ref": null,
+  "selection_revision": "design-v1",
+  "notices": [
+    "schema示例，不是实测最优选择"
+  ]
+}

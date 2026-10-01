@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.venv/
+.16minds/
+.env
+.env.*
+!.env.example
+auth.json
+credentials.json
+/dist/
+/reports/
+/readonly-baseline/
+/readonly-plan/
+/tests/behavior/current-host/
+tests/临时 中文路径/
+.DS_Store
+Thumbs.db

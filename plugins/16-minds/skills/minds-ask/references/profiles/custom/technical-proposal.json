@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "technical-proposal",
+  "version": "1.0.0",
+  "name": "technical-proposal",
+  "enabled": true,
+  "task_kind": "engineering",
+  "required_inputs": [
+    "proposal",
+    "constraints"
+  ],
+  "attention_tags": [
+    "correctness",
+    "maintainability"
+  ],
+  "output_fields": [
+    "findings",
+    "verification_actions"
+  ],
+  "allowed_tool_categories": [
+    "read_supplied"
+  ],
+  "voice": "persona",
+  "recommendation_mode": "informational",
+  "references": [],
+  "source_trust": "built_in",
+  "review_ref": "synthetic-protocol-tests"
+}

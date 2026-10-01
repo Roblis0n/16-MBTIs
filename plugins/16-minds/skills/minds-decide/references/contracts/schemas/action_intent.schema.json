@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://16minds.invalid/contracts/1.0.0/action_intent.schema.json",
+  "title": "action_intent",
+  "type": "object",
+  "properties": {
+    "protocol_version": {
+      "const": "1.0.0"
+    },
+    "action_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "spawn",
+        "send",
+        "wait",
+        "close",
+        "verify"
+      ]
+    },
+    "actor_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "round": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3
+    },
+    "input_hash": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "payload_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "budget_reservation": {
+      "type": "object",
+      "properties": {
+        "agent_turns": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "verification_actions": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "required": [
+        "agent_turns",
+        "verification_actions"
+      ],
+      "additionalProperties": false
+    },
+    "host_schema_hash": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "permission_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "dispatch_status": {
+      "type": "string",
+      "enum": [
+        "proposed",
+        "authorized",
+        "dispatched",
+        "dispatch_unknown",
+        "recorded",
+        "blocked"
+      ]
+    },
+    "host_receipt_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "protocol_version",
+    "action_id",
+    "run_id",
+    "kind",
+    "actor_id",
+    "round",
+    "input_hash",
+    "payload_ref",
+    "budget_reservation",
+    "host_schema_hash",
+    "permission_ref",
+    "dispatch_status",
+    "host_receipt_ref"
+  ],
+  "additionalProperties": false
+}

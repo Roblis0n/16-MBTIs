@@ -1,0 +1,55 @@
+{
+  "protocol_version": "1.0.0",
+  "run_id": "run-synthetic-001",
+  "workflow": "many",
+  "task_kind": "engineering",
+  "profile": null,
+  "voice": "persona",
+  "raw_input": "只读审查提供的合成示例，不运行脚本。",
+  "question": "指出示例中可核查的问题和下一步。",
+  "source_text": null,
+  "locale": "zh-CN",
+  "locked_personas": [],
+  "n": 4,
+  "mode": "middle",
+  "presentation": "summary",
+  "budget": {
+    "max_rounds": 2,
+    "max_agent_turns": 8,
+    "max_verification_actions": 2,
+    "max_repairs_per_result": 1,
+    "concurrency_cap": null,
+    "soft_deadline_seconds": 300,
+    "agent_output_target_codepoints": 1000,
+    "final_summary_target_codepoints": 2500
+  },
+  "permissions": {
+    "read_supplied": true,
+    "write_project": false,
+    "run_untrusted_code": false,
+    "network": false,
+    "persist": false,
+    "external_models": false,
+    "publish": false,
+    "allow_simulation": false
+  },
+  "input_refs": [
+    "synthetic/example.py"
+  ],
+  "provenance": [
+    {
+      "field": "n",
+      "origin": "default",
+      "source_ref": "C01"
+    }
+  ],
+  "notices": [
+    "synthetic fixture, not a completed run"
+  ],
+  "selection": {
+    "require_challenger": false,
+    "legacy_preview": false,
+    "preview_only": false
+  },
+  "workflow_options": null
+}

@@ -1,0 +1,134 @@
+[
+  {
+    "file": "05_tests/negative_fixtures/request_n17.json",
+    "schema": "request",
+    "expected_layer": "schema",
+    "expected_code": "E_SCHEMA"
+  },
+  {
+    "file": "05_tests/negative_fixtures/request_unknown_field.json",
+    "schema": "request",
+    "expected_layer": "schema",
+    "expected_code": "E_SCHEMA"
+  },
+  {
+    "file": "05_tests/negative_fixtures/request_insufficient_turns.json",
+    "schema": "request",
+    "expected_layer": "semantic",
+    "expected_code": "E_BUDGET_TOO_SMALL"
+  },
+  {
+    "file": "05_tests/negative_fixtures/request_fixed_n_violation.json",
+    "schema": "request",
+    "expected_layer": "semantic",
+    "expected_code": "E_CONSTRAINT_CONFLICT"
+  },
+  {
+    "file": "05_tests/negative_fixtures/request_too_many_turns.json",
+    "schema": "request",
+    "expected_layer": "semantic",
+    "expected_code": "E_CONSTRAINT_CONFLICT"
+  },
+  {
+    "file": "05_tests/negative_fixtures/claim_unknown_evidence.json",
+    "schema": "claim",
+    "expected_layer": "semantic",
+    "expected_code": "E_UNKNOWN_EVIDENCE"
+  },
+  {
+    "file": "05_tests/negative_fixtures/claim_false_support.json",
+    "schema": "claim",
+    "expected_layer": "semantic",
+    "expected_code": "E_UNOBSERVED_SUPPORT"
+  },
+  {
+    "file": "05_tests/negative_fixtures/decision_wrong_selection.json",
+    "schema": "decision",
+    "expected_layer": "semantic",
+    "expected_code": "E_SEMANTIC"
+  },
+  {
+    "file": "05_tests/negative_fixtures/decision_infeasible_selected.json",
+    "schema": "decision",
+    "expected_layer": "semantic",
+    "expected_code": "E_SEMANTIC"
+  },
+  {
+    "file": "05_tests/negative_fixtures/calibration_unapproved_active.json",
+    "schema": "calibration",
+    "expected_layer": "semantic",
+    "expected_code": "E_CALIBRATION_MISMATCH"
+  },
+  {
+    "file": "05_tests/negative_fixtures/run_overspent.json",
+    "schema": "run_state",
+    "expected_layer": "semantic",
+    "expected_code": "E_BUDGET_EXHAUSTED"
+  },
+  {
+    "file": "05_tests/negative_fixtures/run_unknown_completed_actor.json",
+    "schema": "run_state",
+    "expected_layer": "semantic",
+    "expected_code": "E_SEMANTIC"
+  },
+  {
+    "file": "05_tests/negative_fixtures/cr_self_approved.json",
+    "schema": "change_request",
+    "expected_layer": "semantic",
+    "expected_code": "E_PERMISSION"
+  },
+  {
+    "file": "05_tests/negative_fixtures/stage_claim_pass_template.json",
+    "schema": "stage_report",
+    "expected_layer": "semantic",
+    "expected_code": "E_SEMANTIC"
+  },
+  {
+    "file": "05_tests/negative_fixtures/ballot_invalid_choice.json",
+    "schema": "ballot",
+    "expected_layer": "schema",
+    "expected_code": "E_SCHEMA"
+  },
+  {
+    "file": "05_tests/negative_fixtures/profile_arbitrary_tool.json",
+    "schema": "profile",
+    "expected_layer": "schema",
+    "expected_code": "E_SCHEMA"
+  },
+  {
+    "file": "05_tests/negative_fixtures/roster_wrong_count.json",
+    "schema": "roster",
+    "expected_layer": "semantic",
+    "expected_code": "E_CONSTRAINT_CONFLICT"
+  },
+  {
+    "file": "05_tests/negative_fixtures/vote_wrong_denominator.json",
+    "schema": "vote_summary",
+    "expected_layer": "semantic",
+    "expected_code": "E_SEMANTIC"
+  },
+  {
+    "file": "05_tests/negative_fixtures/writing_wrong_length.json",
+    "schema": "writing_result",
+    "expected_layer": "semantic",
+    "expected_code": "E_SEMANTIC"
+  },
+  {
+    "file": "05_tests/negative_fixtures/interview_unknown_active.json",
+    "schema": "interview_state",
+    "expected_layer": "semantic",
+    "expected_code": "E_SEMANTIC"
+  },
+  {
+    "file": "05_tests/negative_fixtures/action_false_receipt.json",
+    "schema": "action_intent",
+    "expected_layer": "semantic",
+    "expected_code": "E_SEMANTIC"
+  },
+  {
+    "file": "05_tests/negative_fixtures/agent_claim_other_actor.json",
+    "schema": "agent_result",
+    "expected_layer": "semantic",
+    "expected_code": "E_SEMANTIC"
+  }
+]

@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://16minds.invalid/contracts/1.0.0/roster.schema.json",
+  "title": "roster",
+  "type": "object",
+  "properties": {
+    "run_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "requested_n": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 16
+    },
+    "members": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "actor_id": {
+            "type": "string",
+            "enum": [
+              "intj",
+              "intp",
+              "entj",
+              "entp",
+              "infj",
+              "infp",
+              "enfj",
+              "enfp",
+              "istj",
+              "isfj",
+              "estj",
+              "esfj",
+              "istp",
+              "isfp",
+              "estp",
+              "esfp"
+            ]
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "locked",
+              "heuristic",
+              "calibrated",
+              "heuristic_challenger",
+              "legacy_preview"
+            ]
+          },
+          "newly_covered_tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "actor_id",
+          "source",
+          "newly_covered_tags",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 16
+    },
+    "required_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "uncovered_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "calibration_state": {
+      "type": "string",
+      "enum": [
+        "uncalibrated",
+        "exact",
+        "partial_match",
+        "legacy_preview"
+      ]
+    },
+    "calibration_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "selection_revision": {
+      "type": "string"
+    },
+    "notices": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "run_id",
+    "requested_n",
+    "members",
+    "required_tags",
+    "uncovered_tags",
+    "calibration_state",
+    "calibration_ref",
+    "selection_revision",
+    "notices"
+  ],
+  "additionalProperties": false
+}

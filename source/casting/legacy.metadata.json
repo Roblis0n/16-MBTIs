@@ -1,0 +1,11 @@
+{
+  "state": "legacy",
+  "source": "08_baseline/original_source/casting.json",
+  "sha256": "6ed15f3212ef4d4141546eb3f03c4cd12dc2fbe87a8f10931791abd811dc9a06",
+  "not_current_calibration": true,
+  "limitations": [
+    "Original fitness is a forced ranking, not success probability",
+    "Single main HTML; repeated cells are not independent projects",
+    "Detection corrections require raw answer audit; none invented here"
+  ]
+}

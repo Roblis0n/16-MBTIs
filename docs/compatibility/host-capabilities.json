@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "host_surface": "dot-linux-native-collaboration",
+  "host_version": null,
+  "os": "Linux",
+  "python_version": "3.12.14",
+  "native_delegation": "observed",
+  "tool_schema_hash": null,
+  "open_thread_cap": null,
+  "isolation_status": "unknown",
+  "read_only_status": "unknown",
+  "close_supported": false,
+  "observed_at": "2026-09-30T10:54:00Z",
+  "evidence_refs": [
+    "reports/one-shot/host-cli-discovery.json",
+    "reports/one-shot/host-cli-baseline-install.json",
+    "reports/one-shot/host-cli-baseline-invoke.json",
+    "reports/one-shot/host-cli-baseline-uninstall.json",
+    "reports/one-shot/host-current-observation.json",
+    "reports/one-shot/host-cli-final003-install.json"
+  ],
+  "limitations": [
+    "Seven concurrency slots include root; this is runtime-advertised concurrency, not measured lifetime open-thread cap.",
+    "fork_turns=none is present in actual collaboration schema; clean-context canary not yet executed.",
+    "No close tool is exposed; interrupt is not close. No cleanup-success claim.",
+    "Native delegation observed through the audit worker; this is not plugin installed-entry execution.",
+    "Windows/macOS actual filesystem and client tests not run; no authorized user computer or saved environment (parent environment lookup).",
+    "Read-only restriction is a workflow instruction, not a proven per-child sandbox.",
+    "Token usage and billing metrics unknown.",
+    "Final0030.5.0 coreSHA2566e35bbe818a649d40f49589841bd0d132d00832d2bdcf6f7c9a862d7fb623fc1 registered/installed/listed/uninstalled; exact entry startup failed before model.",
+    "All199/202method counts are development suite methods, not194catalog IDs; latest authoritative count is reports/one-shot/tests/final-005/results.json."
+  ]
+}

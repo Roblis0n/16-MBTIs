@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "calibration_id": "uncalibrated-demo",
+  "state": "active",
+  "fingerprint": {
+    "model_id": null,
+    "model_settings": null,
+    "host_schema_hash": null,
+    "persona_hash": null,
+    "workflow_hash": null,
+    "tool_scope": null,
+    "task_set_version": null,
+    "scoring_version": null,
+    "judge_version": null,
+    "locale": null,
+    "seed": null
+  },
+  "observed_date": null,
+  "input_result_hashes": [],
+  "errata_refs": [],
+  "generation_command": [],
+  "match_status": "unknown",
+  "reviewer_ref": null,
+  "activation_approval_ref": null,
+  "limitations": [
+    "未运行Codex评估，不能生成排名"
+  ]
+}

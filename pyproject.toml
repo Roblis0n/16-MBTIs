@@ -1,0 +1,7 @@
+[tool.minds]
+python-requires = ">=3.11"
+runtime-dependencies = []
+build-command = "python -B tools/build.py"
+test-command = "python -B -m unittest discover -s tests/unit -v"
+identity-source = "source/plugin/identity.json"
+# Plugin distribution is built with stdlib tools/build.py, not a pip wheel.

@@ -1,0 +1,229 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://16minds.invalid/contracts/1.0.0/run_state.schema.json",
+  "title": "run_state",
+  "type": "object",
+  "properties": {
+    "protocol_version": {
+      "const": "1.0.0"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "parent_run_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "created",
+        "validated",
+        "prepared",
+        "running",
+        "verifying",
+        "synthesizing",
+        "completed",
+        "partial",
+        "failed",
+        "cancelled",
+        "blocked"
+      ]
+    },
+    "execution_mode": {
+      "type": "string",
+      "enum": [
+        "native_parallel",
+        "native_batched",
+        "native_sequential",
+        "single_context"
+      ]
+    },
+    "isolation_status": {
+      "type": "string",
+      "enum": [
+        "verified_clean",
+        "unknown",
+        "unavailable",
+        "not_applicable"
+      ]
+    },
+    "input_hash": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "round": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3
+    },
+    "actor_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 120,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+      },
+      "minItems": 1,
+      "maxItems": 16,
+      "uniqueItems": true
+    },
+    "completed_actor_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 120,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+      },
+      "uniqueItems": true
+    },
+    "spent_agent_turns": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "spent_verification_actions": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "budget": {
+      "type": "object",
+      "properties": {
+        "max_rounds": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3
+        },
+        "max_agent_turns": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 48
+        },
+        "max_verification_actions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max_repairs_per_result": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "concurrency_cap": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "maximum": 16
+        },
+        "soft_deadline_seconds": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "agent_output_target_codepoints": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "final_summary_target_codepoints": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "max_rounds",
+        "max_agent_turns",
+        "max_verification_actions",
+        "max_repairs_per_result",
+        "concurrency_cap",
+        "soft_deadline_seconds",
+        "agent_output_target_codepoints",
+        "final_summary_target_codepoints"
+      ],
+      "additionalProperties": false
+    },
+    "pending_action_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 120,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+      },
+      "uniqueItems": true
+    },
+    "residual_thread_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cleanup_status": {
+      "type": "string",
+      "enum": [
+        "not_required",
+        "pending",
+        "confirmed",
+        "partial",
+        "unknown"
+      ]
+    },
+    "stop_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "observed_tokens": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "observed_tool_calls": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "events_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "protocol_version",
+    "run_id",
+    "parent_run_id",
+    "status",
+    "execution_mode",
+    "isolation_status",
+    "input_hash",
+    "round",
+    "actor_ids",
+    "completed_actor_ids",
+    "spent_agent_turns",
+    "spent_verification_actions",
+    "budget",
+    "pending_action_ids",
+    "residual_thread_ids",
+    "cleanup_status",
+    "stop_reason",
+    "observed_tokens",
+    "observed_tool_calls",
+    "events_ref"
+  ],
+  "additionalProperties": false
+}

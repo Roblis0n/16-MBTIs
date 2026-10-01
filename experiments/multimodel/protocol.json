@@ -1,0 +1,18 @@
+{
+  "status": "proposed",
+  "experiment_approval_ref": null,
+  "baseline_completed": false,
+  "providers": [],
+  "models": {},
+  "data_fields": [],
+  "maximum_cost": 0,
+  "authorized_budget": 0,
+  "objective": "Test complementary errors against same-model sampling under matched resources",
+  "stop_conditions": [
+    "missing permission",
+    "budget depleted",
+    "uncertain private field authorization"
+  ],
+  "judge": "anonymous order-swapped plus executable or human audit",
+  "productization": "no_go"
+}

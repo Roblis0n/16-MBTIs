@@ -1,0 +1,12 @@
+{
+  "run_id": "run-synthetic-001",
+  "ask_mode": "interview",
+  "include_why": false,
+  "status": "ready",
+  "questions": [],
+  "active_question_id": null,
+  "asked_turns": 0,
+  "max_interview_turns": 5,
+  "stop_reason": null,
+  "persisted": false
+}

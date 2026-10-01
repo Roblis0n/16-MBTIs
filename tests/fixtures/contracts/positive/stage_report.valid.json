@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "stage_id": "S00",
+  "status": "not_run",
+  "is_template": true,
+  "work_packages": [
+    {
+      "id": "WP01",
+      "status": "not_run",
+      "evidence_refs": [],
+      "limitations": [
+        "待目标宿主执行"
+      ]
+    }
+  ],
+  "repo_root": null,
+  "before_snapshot_ref": null,
+  "after_snapshot_ref": null,
+  "changed_paths": [],
+  "test_results": [],
+  "scope_report_ref": null,
+  "authorization_refs": [],
+  "change_request_refs": [],
+  "unresolved_risks": [
+    "尚未安装/调用目标插件"
+  ],
+  "next_stage_recommendation": null,
+  "reviewed_by": null,
+  "approved_by": null,
+  "approved_at": null
+}

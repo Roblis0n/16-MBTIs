@@ -1,0 +1,45 @@
+{
+  "created": [
+    "validated",
+    "blocked",
+    "failed",
+    "cancelled"
+  ],
+  "validated": [
+    "prepared",
+    "blocked",
+    "failed",
+    "cancelled"
+  ],
+  "prepared": [
+    "running",
+    "blocked",
+    "cancelled"
+  ],
+  "running": [
+    "running",
+    "verifying",
+    "synthesizing",
+    "partial",
+    "failed",
+    "cancelled"
+  ],
+  "verifying": [
+    "running",
+    "synthesizing",
+    "partial",
+    "failed",
+    "cancelled"
+  ],
+  "synthesizing": [
+    "completed",
+    "partial",
+    "failed",
+    "cancelled"
+  ],
+  "completed": [],
+  "partial": [],
+  "failed": [],
+  "cancelled": [],
+  "blocked": []
+}

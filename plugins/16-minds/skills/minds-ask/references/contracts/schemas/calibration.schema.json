@@ -1,0 +1,183 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://16minds.invalid/contracts/1.0.0/calibration.schema.json",
+  "title": "calibration",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "calibration_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "legacy",
+        "candidate",
+        "active",
+        "stale",
+        "revoked",
+        "uncalibrated"
+      ]
+    },
+    "fingerprint": {
+      "type": "object",
+      "properties": {
+        "model_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "model_settings": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "host_schema_hash": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "persona_hash": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "workflow_hash": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "tool_scope": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "task_set_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "scoring_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "judge_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "locale": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "seed": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "model_id",
+        "model_settings",
+        "host_schema_hash",
+        "persona_hash",
+        "workflow_hash",
+        "tool_scope",
+        "task_set_version",
+        "scoring_version",
+        "judge_version",
+        "locale",
+        "seed"
+      ],
+      "additionalProperties": false
+    },
+    "observed_date": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "input_result_hashes": {
+      "type": "array",
+      "items": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "pattern": "^[0-9a-f]{64}$"
+      }
+    },
+    "errata_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "generation_command": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "match_status": {
+      "type": "string",
+      "enum": [
+        "exact",
+        "partial_match",
+        "mismatch",
+        "unknown"
+      ]
+    },
+    "reviewer_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "activation_approval_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "calibration_id",
+    "state",
+    "fingerprint",
+    "observed_date",
+    "input_result_hashes",
+    "errata_refs",
+    "generation_command",
+    "match_status",
+    "reviewer_ref",
+    "activation_approval_ref",
+    "limitations"
+  ],
+  "additionalProperties": false
+}

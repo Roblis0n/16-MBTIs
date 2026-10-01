@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://16minds.invalid/contracts/1.0.0/vote_summary.schema.json",
+  "title": "vote_summary",
+  "type": "object",
+  "properties": {
+    "run_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "proposal_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "proposal_version": {
+      "type": "string"
+    },
+    "synthetic": {
+      "const": true
+    },
+    "policy": {
+      "type": "string",
+      "enum": [
+        "distribution",
+        "absolute_majority",
+        "valid_majority",
+        "strict_unanimity"
+      ]
+    },
+    "quorum": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "eligible_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 120,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+      },
+      "uniqueItems": true,
+      "minItems": 1,
+      "maxItems": 16
+    },
+    "counts": {
+      "type": "object",
+      "properties": {
+        "eligible": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "responded": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "valid_ballots": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "yes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "no": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "abstain": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "decisive": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "eligible",
+        "responded",
+        "valid_ballots",
+        "yes",
+        "no",
+        "abstain",
+        "decisive"
+      ],
+      "additionalProperties": false
+    },
+    "missing_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 120,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+      },
+      "uniqueItems": true
+    },
+    "invalid_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 120,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+      },
+      "uniqueItems": true
+    },
+    "failed_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 120,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+      },
+      "uniqueItems": true
+    },
+    "yes_over_eligible": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "not_requested",
+        "pending_revote",
+        "partial",
+        "no_quorum",
+        "tie",
+        "pass",
+        "fail"
+      ]
+    },
+    "provisional_verdict": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        null,
+        "no_quorum",
+        "tie",
+        "pass",
+        "fail"
+      ]
+    },
+    "calculation_version": {
+      "type": "string"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "run_id",
+    "proposal_id",
+    "proposal_version",
+    "synthetic",
+    "policy",
+    "quorum",
+    "eligible_ids",
+    "counts",
+    "missing_ids",
+    "invalid_ids",
+    "failed_ids",
+    "yes_over_eligible",
+    "verdict",
+    "provisional_verdict",
+    "calculation_version",
+    "limitations"
+  ],
+  "additionalProperties": false
+}

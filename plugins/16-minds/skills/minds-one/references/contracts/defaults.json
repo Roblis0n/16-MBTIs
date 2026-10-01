@@ -1,0 +1,55 @@
+{
+  "version": "1.0.0",
+  "fixed_n": {
+    "one": 1,
+    "pair": 2,
+    "write": 1,
+    "decide": 1,
+    "ask": 1
+  },
+  "variable_n_default": 4,
+  "max_n": 16,
+  "max_rounds_by_mode": {
+    "light": 1,
+    "middle": 2,
+    "heavy": 3
+  },
+  "agent_turns_multiplier": {
+    "light": 1,
+    "middle": 2,
+    "heavy": 3
+  },
+  "verification_actions_by_mode": {
+    "light": 0,
+    "middle": 2,
+    "heavy": 4
+  },
+  "soft_deadline_seconds": {
+    "light": 120,
+    "middle": 300,
+    "heavy": 600
+  },
+  "agent_output_target_codepoints": {
+    "light": 600,
+    "middle": 1000,
+    "heavy": 1600
+  },
+  "final_summary_target_codepoints": {
+    "light": 1800,
+    "middle": 2500,
+    "heavy": 3200
+  },
+  "max_repairs_per_result": 1,
+  "vote_default_policy": "distribution",
+  "permissions_default": {
+    "read_supplied": true,
+    "write_project": false,
+    "run_untrusted_code": false,
+    "network": false,
+    "persist": false,
+    "external_models": false,
+    "publish": false,
+    "allow_simulation": false
+  },
+  "all_defaults_are_design_not_validated_optima": true
+}

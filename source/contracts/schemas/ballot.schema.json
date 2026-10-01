@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://16minds.invalid/contracts/1.0.0/ballot.schema.json",
+  "title": "ballot",
+  "type": "object",
+  "properties": {
+    "run_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "proposal_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "proposal_version": {
+      "type": "string"
+    },
+    "voter_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "ballot_revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "choice": {
+      "type": "string",
+      "enum": [
+        "yes",
+        "no",
+        "abstain"
+      ]
+    },
+    "reason": {
+      "type": "string"
+    },
+    "conditions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "hard_constraint",
+              "preference",
+              "misunderstanding",
+              "unknown"
+            ]
+          },
+          "text": {
+            "type": "string"
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 120,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+            }
+          }
+        },
+        "required": [
+          "kind",
+          "text",
+          "evidence_ids"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "supersedes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "run_id",
+    "proposal_id",
+    "proposal_version",
+    "voter_id",
+    "ballot_revision",
+    "choice",
+    "reason",
+    "conditions",
+    "supersedes"
+  ],
+  "additionalProperties": false
+}

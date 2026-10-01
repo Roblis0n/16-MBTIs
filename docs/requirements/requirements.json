@@ -1,0 +1,167 @@
+{
+  "schema_version": "1.0.0",
+  "requirements": [
+    {
+      "id": "U01",
+      "text": "把上传项目迁为 Codex plugin，保留可识别的原有功能与人格资产。",
+      "type": "user"
+    },
+    {
+      "id": "U02",
+      "text": "审查逻辑漏洞、改进产品与工程质量，并考虑实际有用的新功能。",
+      "type": "user"
+    },
+    {
+      "id": "U03",
+      "text": "新建议必须伴随调研，区分事实、设计判断、待验证假设。",
+      "type": "user"
+    },
+    {
+      "id": "U04",
+      "text": "每项工作有极详计划，每阶段有可直接交给agent的提示词；控制范围、授权和验收；最终交付ZIP。",
+      "type": "user"
+    },
+    {
+      "id": "N01",
+      "text": "证据式代码审查，把发现连接到定位/触发/复现/修复/测试。",
+      "type": "proposed_feature"
+    },
+    {
+      "id": "N02",
+      "text": "事前验尸，连接失败路径、预警和预防措施。",
+      "type": "proposed_feature"
+    },
+    {
+      "id": "N03",
+      "text": "决策翻转条件、敏感性检查、最小有效验证动作。",
+      "type": "proposed_feature"
+    },
+    {
+      "id": "N04",
+      "text": "研究可行性压力测试，优先验证关键数据与交付约束。",
+      "type": "proposed_feature"
+    },
+    {
+      "id": "N05",
+      "text": "本地opt-in决策记录和手动复盘，不假装后台提醒。",
+      "type": "proposed_feature"
+    },
+    {
+      "id": "N06",
+      "text": "证据版本变动后的影响分析与保守增量重评。",
+      "type": "proposed_feature"
+    },
+    {
+      "id": "N07",
+      "text": "可组合任务模板与无人格对照模式，不增加入口负担。",
+      "type": "proposed_feature"
+    },
+    {
+      "id": "N08",
+      "text": "公平对照、预算与效果实测、可失效的校准和勘误链。",
+      "type": "proposed_feature"
+    },
+    {
+      "id": "N09",
+      "text": "可选独立skills/Claude导出，不以多宿主需求阻塞核心。",
+      "type": "proposed_feature"
+    },
+    {
+      "id": "N10",
+      "text": "可选多模型实验，额外接口、数据外发和预算单独审批。",
+      "type": "proposed_feature"
+    }
+  ],
+  "findings": [
+    {
+      "id": "F01",
+      "severity": "P0",
+      "description": "多轮丢失自己的原主张、限定与修改历史",
+      "source_locator": "commands/pair.md:80,106–113,143；commands/minds.md 深挖/反驳段"
+    },
+    {
+      "id": "F02",
+      "severity": "P0",
+      "description": "cast 短榜只有5人且追加rival可能得到N+1",
+      "source_locator": "commands/cast.md:27,65–69；casting.json:287–344"
+    },
+    {
+      "id": "F03",
+      "severity": "P1",
+      "description": "固定前缀取人使小N系统性缺少后半视角",
+      "source_locator": "commands/minds.md:15,20"
+    },
+    {
+      "id": "F04",
+      "severity": "P0",
+      "description": "旧实验外推与更正后的检测率未同步",
+      "source_locator": "casting.json；作者 RESULTS/ERRATA/detection_main"
+    },
+    {
+      "id": "F05",
+      "severity": "P1",
+      "description": "统计示例不一致、角色重复归桶与跨对象评分",
+      "source_locator": "commands/minds.md:98；Outputs/qiita-title-discussion.md:13–28,80"
+    },
+    {
+      "id": "F06",
+      "severity": "P0",
+      "description": "信息不足仍强制决策，重试没有明确上限",
+      "source_locator": "skills/voice-decide/SKILL.md:37,83"
+    },
+    {
+      "id": "F07",
+      "severity": "P0",
+      "description": "1赞成15保留也可通过；合成票可能被误解为人群支持",
+      "source_locator": "skills/voice-vote/SKILL.md:64–65,117–118"
+    },
+    {
+      "id": "F08",
+      "severity": "P0",
+      "description": "假定所有反对均可妥协；改提案后未要求有效重投",
+      "source_locator": "skills/voice-vote/SKILL.md heavy 流程"
+    },
+    {
+      "id": "F09",
+      "severity": "P0",
+      "description": "去AI味要求可诱导无依据数字/经历/因果强化",
+      "source_locator": "skills/voice-write/SKILL.md:55–58；Outputs 标题例"
+    },
+    {
+      "id": "F10",
+      "severity": "P1",
+      "description": "共同写作规则可能抹平角色特点，长度约定漂移",
+      "source_locator": "skills/voice-write/SKILL.md；agents/entj.md"
+    },
+    {
+      "id": "F11",
+      "severity": "P1",
+      "description": "固定深挖人数、强制争议，N小或无分歧不成立",
+      "source_locator": "commands/minds.md；commands/pair.md"
+    },
+    {
+      "id": "F12",
+      "severity": "P1",
+      "description": "缺少统一预算、重试、开放线程与取消管理",
+      "source_locator": "commands/minds.md heavy；跨入口调度"
+    },
+    {
+      "id": "F13",
+      "severity": "P1",
+      "description": "参数优先级、入口引用、questions_only等约定冲突",
+      "source_locator": "commands/pair.md；commands/cast.md；skills/voice-ask/SKILL.md"
+    },
+    {
+      "id": "F14",
+      "severity": "P1",
+      "description": "日志忽略不一致，路径覆盖/隐私/并发边界不明确",
+      "source_locator": "根 .gitignore；各写出日志的工作流"
+    },
+    {
+      "id": "F15",
+      "severity": "P1",
+      "description": "原文、人格自信与多数可能压过可核查证据",
+      "source_locator": "agents/*.md；所有最终综合流程"
+    }
+  ]
+}

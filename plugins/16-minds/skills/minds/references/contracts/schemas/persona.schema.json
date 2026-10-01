@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://16minds.invalid/contracts/1.0.0/persona.schema.json",
+  "title": "persona",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "enum": [
+        "intj",
+        "intp",
+        "entj",
+        "entp",
+        "infj",
+        "infp",
+        "enfj",
+        "enfp",
+        "istj",
+        "isfj",
+        "estj",
+        "esfj",
+        "istp",
+        "isfp",
+        "estp",
+        "esfp"
+      ]
+    },
+    "revision": {
+      "type": "string"
+    },
+    "lens": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 2,
+      "maxItems": 4
+    },
+    "voice": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "self_check": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "common_competence_ref": {
+      "type": "string"
+    },
+    "source_map": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "field": {
+            "type": "string"
+          },
+          "original_file": {
+            "type": "string"
+          },
+          "source_section": {
+            "type": "string"
+          },
+          "migration_note": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "field",
+          "original_file",
+          "source_section",
+          "migration_note"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "id",
+    "revision",
+    "lens",
+    "voice",
+    "self_check",
+    "common_competence_ref",
+    "source_map"
+  ],
+  "additionalProperties": false
+}

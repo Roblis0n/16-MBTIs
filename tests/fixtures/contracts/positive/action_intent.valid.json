@@ -1,0 +1,18 @@
+{
+  "protocol_version": "1.0.0",
+  "action_id": "ACT-proposed-1",
+  "run_id": "run-synthetic-001",
+  "kind": "spawn",
+  "actor_id": "intj",
+  "round": 1,
+  "input_hash": null,
+  "payload_ref": "synthetic/context.json",
+  "budget_reservation": {
+    "agent_turns": 1,
+    "verification_actions": 0
+  },
+  "host_schema_hash": null,
+  "permission_ref": null,
+  "dispatch_status": "proposed",
+  "host_receipt_ref": null
+}

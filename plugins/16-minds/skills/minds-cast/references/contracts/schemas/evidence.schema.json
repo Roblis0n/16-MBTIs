@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://16minds.invalid/contracts/1.0.0/evidence.schema.json",
+  "title": "evidence",
+  "type": "object",
+  "properties": {
+    "evidence_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "provided_file",
+        "web_document",
+        "tool_observation",
+        "participant_statement",
+        "user_constraint"
+      ]
+    },
+    "locator": {
+      "type": "string"
+    },
+    "content_hash": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "observed_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "access_status": {
+      "type": "string",
+      "enum": [
+        "observed",
+        "not_accessed",
+        "unavailable",
+        "stale"
+      ]
+    },
+    "trust_class": {
+      "type": "string",
+      "enum": [
+        "user_instruction",
+        "untrusted_content",
+        "controlled_observation",
+        "participant_statement"
+      ]
+    },
+    "source_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "scope": {
+      "type": "string"
+    },
+    "excerpt_or_summary": {
+      "type": "string"
+    },
+    "derived_from": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 120,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$"
+      }
+    },
+    "observation": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "command_argv": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "exit_code": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "output_summary": {
+              "type": "string"
+            },
+            "environment_ref": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "command_argv",
+            "exit_code",
+            "output_summary",
+            "environment_ref"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "required": [
+    "evidence_id",
+    "kind",
+    "locator",
+    "content_hash",
+    "observed_at",
+    "access_status",
+    "trust_class",
+    "source_version",
+    "scope",
+    "excerpt_or_summary",
+    "derived_from",
+    "observation"
+  ],
+  "additionalProperties": false
+}

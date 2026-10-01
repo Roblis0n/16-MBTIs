@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "code-review",
+  "version": "1.0.0",
+  "name": "code-review",
+  "enabled": true,
+  "task_kind": "engineering",
+  "required_inputs": [
+    "checked_scope",
+    "snapshot_hash"
+  ],
+  "attention_tags": [
+    "correctness",
+    "boundary",
+    "operations",
+    "user-impact"
+  ],
+  "output_fields": [
+    "location",
+    "trigger",
+    "reproduction_status",
+    "impact",
+    "remedy",
+    "test",
+    "evidence"
+  ],
+  "allowed_tool_categories": [
+    "read_supplied"
+  ],
+  "voice": "persona",
+  "recommendation_mode": "informational",
+  "references": [],
+  "source_trust": "built_in",
+  "review_ref": "synthetic-protocol-tests"
+}
