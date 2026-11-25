@@ -17,8 +17,14 @@ def run(label):
     if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_.-]{0,79}',label): raise ValueError('invalid unique label')
     out=ROOT/'reports/one-shot/tests'/label
     out.mkdir(parents=True,exist_ok=False)
-    files=sorted(p for p in (ROOT/'tests').rglob('test_*.py') if not any(x in {'tmp','__pycache__','临时 中文路径'} for x in p.parts))
-    hashes={p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for base in ('runtime','source','tools','tests') for p in (ROOT/base).rglob('*') if p.is_file() and not any(x in {'tmp','__pycache__','临时 中文路径'} for x in p.parts)}
+    excluded={'tmp','__pycache__','临时 中文路径'}
+    # Filter on repo-relative path segments only: filtering on absolute
+    # parts silently excluded every test file whenever the repository
+    # itself sat under a directory named e.g. 'tmp', and this run then
+    # reported success with method_count 0.
+    files=sorted(p for p in (ROOT/'tests').rglob('test_*.py') if not any(x in excluded for x in p.relative_to(ROOT).parts))
+    if not files: raise ValueError('no test files collected; refusing to produce empty evidence')
+    hashes={p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for base in ('runtime','source','tools','tests') for p in (ROOT/base).rglob('*') if p.is_file() and not any(x in excluded for x in p.relative_to(ROOT).parts)}
     commands=[]
     for cmd in ([sys.executable,'-B','tools/build.py'],[sys.executable,'-B','tools/build.py','--check']):
         proc=subprocess.run(cmd,cwd=ROOT,capture_output=True,text=True)

@@ -1,0 +1,45 @@
+{
+  "model_authored_output": {
+    "paths": [
+      {
+        "prevention": {
+          "owner_role": "principal investigator",
+          "resources": "instructor agreements signed before launch",
+          "earliest_time": "before ethics submission",
+          "verification": "signed agreements on file"
+        },
+        "response": {
+          "owner_role": "principal investigator",
+          "resources": "pre-approved secondary channel list",
+          "earliest_time": "week two checkpoint",
+          "verification": "response-rate checkpoint recorded"
+        },
+        "prevention_cost": 2,
+        "cost_unit": "person-days",
+        "new_costs_and_risks": "Preparation time is spent even if the event succeeds.",
+        "source_refs": [
+          "synthetic-fixture"
+        ],
+        "assumption": "Course instructors will distribute the survey link in class.",
+        "event": "Most instructors decline, and distribution shrinks to a single mailing list.",
+        "mechanism": "One low-response channel cannot reach the pre-registered sample size in the approval window.",
+        "early_signal": "Fewer than 30 responses after the first two weeks.",
+        "consequence": "The study closes underpowered and the semester of approval is spent.",
+        "stop_condition": "If responses are below 100 by week six, stop and redesign rather than extend silently."
+      }
+    ],
+    "plan": {
+      "plan": "Complete a survey study of first-year students within one semester.",
+      "horizon": "one semester (16 weeks)",
+      "success": "At least 300 valid responses with the pre-registered analysis run.",
+      "failure": "Response count stays below the pre-registered minimum or ethics approval lapses.",
+      "hard_constraints": "Ethics approval covers one semester only; no incentives budget.",
+      "budget": {
+        "unit": "person-days",
+        "limit": 5
+      }
+    }
+  },
+  "actual_activity_execution": "not_run",
+  "unknown_resources_are_not_confirmed": true
+}

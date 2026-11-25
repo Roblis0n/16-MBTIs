@@ -7,7 +7,7 @@ import unittest
 ROOT=Path(__file__).resolve().parents[2]
 class CliTests(unittest.TestCase):
     def call(self,command,payload=None):
-        return subprocess.run([sys.executable,"-B",str(ROOT/"tools/minds_cli.py"),command],input=payload,capture_output=True,encoding="utf-8",cwd=ROOT.parent)
+        return subprocess.run([sys.executable,"-B",str(ROOT/"tools/minds_cli.py"),command],input=payload if payload is not None else "",capture_output=True,encoding="utf-8",cwd=ROOT.parent,timeout=60)
 
     def test_actual_help_version_and_json(self):
         for command in ("help","--help","version","--version"):

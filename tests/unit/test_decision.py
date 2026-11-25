@@ -1,3 +1,7 @@
+import sys
+from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0,str(Path(__file__).resolve().parents[2]/'runtime'))
 import unittest
 from minds.decision import filter_feasible, validate_decision, decide
 from minds.errors import MindsError

@@ -127,6 +127,16 @@ class SchedulerTests(unittest.TestCase):
         with self.assertRaises(MindsError): preflight(req,caps)
         caps.update(isolation_status='verified_clean',open_thread_cap=None)
         self.assertEqual(preflight(req,caps)['concurrency'],1)
+
+    def test_preflight_concurrency_is_smaller_of_host_and_user_caps(self):
+        req=fixture('request'); caps=fixture('capabilities')
+        caps.update(native_delegation='observed',isolation_status='verified_clean')
+        req['budget']['concurrency_cap']=2; caps['open_thread_cap']=3
+        self.assertEqual(preflight(req,caps)['concurrency'],2)
+        req['budget']['concurrency_cap']=4; caps['open_thread_cap']=3
+        self.assertEqual(preflight(req,caps)['concurrency'],3)
+        req['budget']['concurrency_cap']=3; caps['open_thread_cap']=1
+        self.assertEqual(preflight(req,caps)['concurrency'],1)
         req['budget']['max_agent_turns']=1; req['n']=4
         with self.assertRaises(MindsError): preflight(req,caps)
 

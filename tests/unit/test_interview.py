@@ -1,3 +1,7 @@
+import sys
+from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0,str(Path(__file__).resolve().parents[2]/'runtime'))
 import unittest
 from minds.interview import create_interview, select_next_question, record_answer, should_stop_interview, render_questions, stop_interview
 from minds.errors import MindsError

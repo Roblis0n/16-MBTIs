@@ -17,6 +17,10 @@ class PackagedTests(unittest.TestCase):
             self.assertTrue(isolated.is_relative_to(base.resolve()))
             identity=json.loads((ROOT/"source/plugin/identity.json").read_text("utf-8"))
             archive=ROOT/"dist"/f"16-minds-{identity['version']}-static_candidate.zip"
+            if not archive.exists():
+                # dist/ is gitignored; on a fresh clone the packaged
+                # distribution must be built before it can be tested.
+                subprocess.run([sys.executable,"-B",str(ROOT/"tools/build.py")],cwd=ROOT,check=True,capture_output=True,timeout=300)
             with zipfile.ZipFile(archive) as z:
                 for info in z.infolist():
                     dest=isolated/info.filename
@@ -39,7 +43,7 @@ class PackagedTests(unittest.TestCase):
                 for cwd in (isolated,package/"skills"):
                     # -I ignores PYTHONPATH/site customization; helper resolves all package assets itself.
                     def call(command,payload=None):
-                        p=subprocess.run([sys.executable,"-I","-B",str(helper),command],input=None if payload is None else json.dumps(payload,ensure_ascii=False),capture_output=True,encoding="utf-8",cwd=cwd,env=env)
+                        p=subprocess.run([sys.executable,"-I","-B",str(helper),command],input="" if payload is None else json.dumps(payload,ensure_ascii=False),capture_output=True,encoding="utf-8",cwd=cwd,env=env,timeout=60)
                         self.assertNotIn("Traceback",p.stderr)
                         return p,json.loads(p.stdout)
                     p,data=call("version"); self.assertEqual(p.returncode,0); self.assertEqual(data["version"],identity["version"])

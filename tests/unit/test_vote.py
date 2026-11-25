@@ -1,3 +1,7 @@
+import sys
+from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0,str(Path(__file__).resolve().parents[2]/'runtime'))
 import itertools
 import unittest
 from minds.vote import tally_ballots, validate_ballots, revise_proposal

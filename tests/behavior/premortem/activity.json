@@ -1,0 +1,45 @@
+{
+  "model_authored_output": {
+    "paths": [
+      {
+        "prevention": {
+          "owner_role": "organizer",
+          "resources": "checklist and one rehearsal slot",
+          "earliest_time": "one week before",
+          "verification": "dry-run sign-off recorded"
+        },
+        "response": {
+          "owner_role": "organizer",
+          "resources": "fallback plan and contact list",
+          "earliest_time": "within one hour of the signal",
+          "verification": "post-event review notes"
+        },
+        "prevention_cost": 2,
+        "cost_unit": "person-days",
+        "new_costs_and_risks": "Preparation time is spent even if the event succeeds.",
+        "source_refs": [
+          "synthetic-fixture"
+        ],
+        "assumption": "Registrations convert to attendance at the usual rate.",
+        "event": "A transit strike on the event day cuts attendance below the viable threshold.",
+        "mechanism": "Most participants rely on one transit line; no remote fallback exists, so a strike removes them at once.",
+        "early_signal": "Strike notice published in local news three days before the event.",
+        "consequence": "Workshop runs below viable size and the fixed venue cost is wasted.",
+        "stop_condition": "If confirmed attendance drops below 15 by the day before, postpone instead of running."
+      }
+    ],
+    "plan": {
+      "plan": "Run a one-day community workshop for 40 registered participants.",
+      "horizon": "event day plus one week of preparation",
+      "success": "At least 30 participants attend and the closing survey averages 4 of 5.",
+      "failure": "Fewer than 15 participants attend or the venue becomes unusable.",
+      "hard_constraints": "Fixed venue booking; total budget cap; no paid advertising.",
+      "budget": {
+        "unit": "person-days",
+        "limit": 5
+      }
+    }
+  },
+  "actual_activity_execution": "not_run",
+  "unknown_resources_are_not_confirmed": true
+}

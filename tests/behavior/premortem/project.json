@@ -1,0 +1,45 @@
+{
+  "model_authored_output": {
+    "paths": [
+      {
+        "prevention": {
+          "owner_role": "tech lead",
+          "resources": "one audit week and report-owner interviews",
+          "earliest_time": "week one",
+          "verification": "audit list signed by report owners"
+        },
+        "response": {
+          "owner_role": "project manager",
+          "resources": "licence renewal quote and descoped report list",
+          "earliest_time": "as soon as the audit shows the gap",
+          "verification": "revised plan approved by stakeholders"
+        },
+        "prevention_cost": 2,
+        "cost_unit": "person-days",
+        "new_costs_and_risks": "Preparation time is spent even if the event succeeds.",
+        "source_refs": [
+          "synthetic-fixture"
+        ],
+        "assumption": "The legacy report definitions are complete and current.",
+        "event": "A third of the legacy reports turn out to use undocumented manual steps.",
+        "mechanism": "Migration stalls report by report while the team reverse-engineers steps nobody recorded.",
+        "early_signal": "The first migrated report needs two undocumented manual corrections.",
+        "consequence": "Schedule slips past the licence end and the team must renew the old tool at full price.",
+        "stop_condition": "If the audit finds more than ten undocumented reports, stop and re-plan the scope."
+      }
+    ],
+    "plan": {
+      "plan": "Deliver the internal reporting tool migration in six weeks with the current team.",
+      "horizon": "six weeks",
+      "success": "All reports run on the new tool and the old tool is decommissioned.",
+      "failure": "The migration slips past the quarter end or a critical report breaks.",
+      "hard_constraints": "No additional hires; the old tool licence ends at quarter end.",
+      "budget": {
+        "unit": "person-days",
+        "limit": 5
+      }
+    }
+  },
+  "actual_activity_execution": "not_run",
+  "unknown_resources_are_not_confirmed": true
+}
